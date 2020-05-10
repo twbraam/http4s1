@@ -8,7 +8,7 @@ import org.http4s._
 import org.http4s.dsl.io._
 import org.http4s.implicits._
 
-object SimpleAndAgrregated {
+object SimpleAndAggregated {
 
   val service = HttpRoutes.of[IO] {
     case GET -> Root / "bad" => BadRequest()
