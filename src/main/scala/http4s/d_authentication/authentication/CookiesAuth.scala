@@ -1,14 +1,12 @@
 package http4s.d_authentication.authentication
 
-import cats.implicits._
-import org.http4s.dsl.io.{Forbidden, Ok}
-import org.reactormonk.{CryptoBits, PrivateKey}
-
 import cats.data._
 import cats.effect._
+import cats.implicits._
 import http4s.d_authentication.User
 import org.http4s._
-import org.http4s.dsl.io._
+import org.http4s.dsl.io.{Forbidden, Ok, _}
+import org.reactormonk.{CryptoBits, PrivateKey}
 
 object CookiesAuth {
 

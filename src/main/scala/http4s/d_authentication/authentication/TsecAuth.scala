@@ -1,37 +1,11 @@
 package http4s.d_authentication.authentication
 
-import cats.implicits._
-import org.http4s.dsl.io.{Forbidden, Ok}
-import org.reactormonk.{CryptoBits, PrivateKey}
-
-import cats.data._
-import cats.effect._
+import cats.effect.IO
 import http4s.d_authentication.User
-import org.http4s._
-import org.http4s.dsl.io._
-import tsecauth.TsecHelpers._ // import dummyBackingStore factory
-
-import java.util.UUID
-
-
-import cats._
-import cats.data.OptionT
-import cats.effect.{IO, Sync}
-import cats.implicits._
-import org.http4s.HttpService
-import org.http4s.dsl.io._
+import http4s.d_authentication.authentication.tsecauth.TsecHelpers._
 import tsec.authentication._
-import tsec.authorization._
-import tsec.cipher.symmetric.jca._
 import tsec.common.SecureRandomId
-import tsec.jws.mac.JWTMac
 
-import scala.collection.mutable
-import scala.concurrent.duration._
-
-
-
-import scala.collection.mutable
 import scala.concurrent.duration._
 
 
