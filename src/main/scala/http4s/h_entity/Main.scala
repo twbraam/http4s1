@@ -1,18 +1,17 @@
-package http4s.b_DSL
+package http4s.h_entity
 
-import cats.effect._
+import cats.effect.{IO, _}
 import org.http4s.implicits._
-import org.http4s.server.blaze._
+import org.http4s.server.blaze.BlazeServerBuilder
 
-import scala.concurrent.ExecutionContext.Implicits.global
-
+import scala.concurrent.ExecutionContext.global
 
 object Main extends IOApp {
 
   def run(args: List[String]): IO[ExitCode] =
     BlazeServerBuilder[IO](global)
       .bindHttp(8080, "localhost")
-      .withHttpApp(services.Simple.service.orNotFound)
+      .withHttpApp(services.JSON.routes.orNotFound)
       .serve
       .compile
       .drain
